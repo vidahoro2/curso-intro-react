@@ -1,26 +1,38 @@
-const todos = [
-  {text:'Cortar Cebolla', completed:false},
-  {text:'Tomar el curso de intro a React', completed:false},
-  {text:'Cortar cesped', completed:false},
-];
+import react from "react";
+import {TodoCounter} from "./TodoCounter";
+import { TodoSearch } from "./TodoSearch.js";
+import { TodoList } from "./TodoList.js";
+import { TodoItem } from "./TodoItem.js";
+import { CreateTodoButtom } from "./CreateTodoButton.js";
+import {TodoBanner} from "./TodoBanner"
 
+import './App.css';
+const todos=[
+  {text:'Cortar cebolla', completed:true},
+  {text:'Tormar el curso de intro a react', completed:false},
+  {text:'Llorar con la llorona', completed:false}
+];
 function App() {
   return (
-    <div>
-          <TodoCounter />
-      <h2>Has completado 2 de 3 TODOs</h2>
-      
-      <TodoSearch />
-      <input placeholder="Cebolla"/>
+  <react.Fragment>
+  <div className="Main-Container">
+    <div className="TodoContainer">
+      <TodoCounter/>
 
-      <TodoList>
-          {todos.map(todo => (<TodoItem/>) )}
-      </TodoList>
+          <TodoSearch />
+          <TodoList>
+            {todos.map(todo =>(<TodoItem key={todo.text} text={todo.text} completed={todo.completed} />))}
+          </TodoList>
+          <CreateTodoButtom />
 
-      <CreateTodoButtom/>
-      <button></button>
     </div>
+
+    <TodoBanner/>
+
+
+  </div>
   
+  </react.Fragment>
   );
 }
 
