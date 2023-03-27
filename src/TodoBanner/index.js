@@ -7,8 +7,9 @@ function TodoBanner(){
 
             <div className="Banner-Container">
 
-            <p>Hola Soy un texto de prueba</p>
+            <h2>La mejor aplicación para mantener el seguimiento de tus tareas diarias</h2>
             <img src="https://cdn-icons-png.flaticon.com/512/281/281532.png" alt="prueba"/>
+            <h3>Añade tu lista de reproducción para que te acompañe mientras realizas tus tareas</h3>
 
             </div>
 
